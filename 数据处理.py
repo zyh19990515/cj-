@@ -70,10 +70,12 @@ def dateData(date_data):
     for i in range(0, len(date_data)):
         if (len(date_data[i])==0):
             empty_index.append(i)
-
-    del date_data[163]
-    del date_data[233]
-    print(date_data)
+    cnt = 0
+    for num in empty_index:
+        #print(date_data[num-cnt])
+        del date_data[num-cnt]
+        cnt += 1
+   
     for i in range(0, len(date_data)):
         date_data[i] = date_data[i][:-6]
         date_data[i] = int(float(date_data[i]))
